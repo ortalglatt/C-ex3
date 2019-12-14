@@ -1,0 +1,27 @@
+c_ex3
+ortal.netzer
+312416845
+######
+
+In this exercise, we built a program that using a static library libinfi.lib we created, to
+calculate the integration and the derivative of a function according to the given parameters.
+We also created a Makefile that compile the while program.
+
+The library includes one header file and one c file that contains two functions -
+integration: Gets a function that gets a double as a parameter and return a double, a and b
+             parameters - the lower and upper bound of the integral calculation, and n - the
+             division factor. The integral calculation is based on Riemann sums.
+             The assert in that function makes sure that the bounds are valid (a <= b), and that n
+             is valid (n > 0).
+derivative: Gets a function that gets a double as a parameter and return a double, x0 - the point
+            where we want to calculate the derivative, and h - the derivative step size,
+            The assert in that function makes sure that the step size is legal (h > 0).
+
+The main c file NumericalAnalyzer.c contains all the 6 function options that we can calculate the
+integration and derivative for, and the main function that checks the given arguments. If their was
+an error in the arguments (number of arguments or an invalid argument) it will print an error
+massage to stderr. If all the arguments were valid, it will calculate the integration and the
+derivative according to the parameters, and print the result if their was no assert error.
+
+The makefile includes all the compilation command we need to create the static "libinfi" library,
+and to compile the whole program.
